@@ -31,7 +31,7 @@ BrainBridge is a smart student productivity platform designed to help students s
 
 ## Screenshot
 
-![BrainBridge Screenshot](screenshot.png)
+![BrainBridge Screenshot](image.png)
 
 ---
 
