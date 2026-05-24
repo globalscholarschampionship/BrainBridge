@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>BrainBridge</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        overflow-x: hidden;
+      }
+
+      * {
+        transition: all 0.3s ease;
+      }
+
+      button:hover {
+        transform: scale(1.05);
+      }
+
+      nav a {
+        position: relative;
+      }
+
+      nav a::after {
+        content: "";
+
+        position: absolute;
+
+        left: 0;
+        bottom: -5px;
+
+        width: 0%;
+        height: 2px;
+
+        background: #3b82f6;
+
+        transition: 0.3s;
+      }
+
+      nav a:hover::after {
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body class="bg-black text-white min-h-screen">
+    <!-- NAVBAR -->
+
+    <nav class="sticky top-0 z-50 bg-black border-b border-gray-800">
+      <div class="flex justify-between items-center px-8 py-5">
+        <h1 class="text-3xl font-bold text-blue-500">BrainBridge</h1>
+
+        <ul class="hidden md:flex gap-8 font-semibold">
+          <li><a href="#planner">Planner</a></li>
+
+          <li><a href="#timerSection">Timer</a></li>
+
+          <li><a href="#notesSection">Notes</a></li>
+
+          <li><a href="#progressSection">Progress</a></li>
+
+          <li><a href="#streakSection">Streak</a></li>
+
+          <li><a href="#goalsSection">Goals</a></li>
+
+          <li><a href="#flashcardsSection">Flashcards</a></li>
+        </ul>
+
+        <button id="themeBtn" class="bg-blue-500 px-5 py-2 rounded-xl">
+          Theme
+        </button>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="text-center py-24 px-6">
+      <h1 class="text-7xl font-bold">
+        Brain<span class="text-blue-500">Bridge</span>
+      </h1>
+
+      <p class="mt-6 text-gray-400 text-xl">
+        Your all-in-one productivity platform.
+      </p>
+    </section>
+
+    <!-- TASK PLANNER -->
+
+    <section id="planner" class="px-8 pb-20">
+      <div class="bg-gray-900 p-8 rounded-3xl max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-6">Task Planner</h2>
+
+        <div class="flex gap-4">
+          <input
+            id="taskInput"
+            type="text"
+            placeholder="Enter task..."
+            class="flex-1 p-4 rounded-xl text-black"
+          />
+
+          <button id="addTaskBtn" class="bg-blue-500 px-6 rounded-xl">
+            Add
+          </button>
+        </div>
+
+        <ul id="taskList" class="space-y-4 mt-8"></ul>
+      </div>
+    </section>
+
+    <!-- TIMER -->
+
+    <section id="timerSection" class="px-8 pb-20">
+      <div class="bg-gray-900 p-8 rounded-3xl max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-8">Pomodoro Timer</h2>
+
+        <h1 id="timer" class="text-7xl font-bold text-blue-500">25:00</h1>
+
+        <div class="flex justify-center gap-4 mt-8">
+          <button id="startBtn" class="bg-green-500 px-6 py-3 rounded-xl">
+            Start
+          </button>
+
+          <button id="pauseBtn" class="bg-yellow-500 px-6 py-3 rounded-xl">
+            Pause
+          </button>
+
+          <button id="resetBtn" class="bg-red-500 px-6 py-3 rounded-xl">
+            Reset
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOTES -->
+
+    <section id="notesSection" class="px-8 pb-20">
+      <div class="bg-gray-900 p-8 rounded-3xl max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-6">Notes</h2>
+
+        <textarea
+          id="notesInput"
+          class="w-full h-56 p-4 rounded-xl text-black"
+          placeholder="Write notes here..."
+        ></textarea>
+
+        <div class="flex gap-4 mt-6">
+          <button id="saveNotesBtn" class="bg-blue-500 px-6 py-3 rounded-xl">
+            Save
+          </button>
+
+          <button id="clearNotesBtn" class="bg-red-500 px-6 py-3 rounded-xl">
+            Clear
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRESS -->
+
+    <section id="progressSection" class="px-8 pb-20">
+      <div class="bg-gray-900 p-8 rounded-3xl max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-6">Progress</h2>
+
+        <div class="w-full bg-gray-700 rounded-full h-8">
+          <div
+            id="progressBar"
+            class="bg-blue-500 h-8 rounded-full"
+            style="width: 0%"
+          ></div>
+        </div>
+
+        <div class="flex gap-4 mt-6">
+          <button id="progressBtn" class="bg-green-500 px-6 py-3 rounded-xl">
+            + Increase
+          </button>
+
+          <button
+            id="decreaseProgressBtn"
+            class="bg-red-500 px-6 py-3 rounded-xl"
+          >
+            - Decrease
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- STREAK -->
+
+    <section id="streakSection" class="px-8 pb-20">
+      <div class="bg-gray-900 p-8 rounded-3xl max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-6">Study Streak</h2>
+
+        <h1 id="streakCount" class="text-7xl font-bold text-orange-500">0</h1>
+
+        <div class="flex justify-center gap-4 mt-6">
+          <button
+            id="decreaseStreakBtn"
+            class="bg-red-500 px-6 py-3 rounded-xl"
+          >
+            - Decrease
+          </button>
+
+          <button id="streakBtn" class="bg-orange-500 px-6 py-3 rounded-xl">
+            + Increase
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- GOALS -->
+
+    <section id="goalsSection" class="px-8 pb-20">
+      <div class="bg-gray-900 p-8 rounded-3xl max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-6">Daily Goals</h2>
+
+        <div class="flex gap-4">
+          <input
+            id="goalInput"
+            type="text"
+            placeholder="Enter goal..."
+            class="flex-1 p-4 rounded-xl text-black"
+          />
+
+          <button id="addGoalBtn" class="bg-blue-500 px-6 rounded-xl">
+            Add
+          </button>
+        </div>
+
+        <ul id="goalList" class="space-y-4 mt-8"></ul>
+      </div>
+    </section>
+
+    <!-- FLASHCARDS -->
+
+    <section id="flashcardsSection" class="px-8 pb-20">
+      <div class="bg-gray-900 p-8 rounded-3xl max-w-5xl mx-auto">
+        <h2 class="text-4xl font-bold mb-6">Flashcards</h2>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <input
+            id="questionInput"
+            type="text"
+            placeholder="Question"
+            class="p-4 rounded-xl text-black"
+          />
+
+          <input
+            id="answerInput"
+            type="text"
+            placeholder="Answer"
+            class="p-4 rounded-xl text-black"
+          />
+        </div>
+
+        <button
+          id="addFlashcardBtn"
+          class="mt-6 bg-blue-500 px-6 py-3 rounded-xl"
+        >
+          Add Flashcard
+        </button>
+
+        <div
+          id="flashcardContainer"
+          class="grid md:grid-cols-2 gap-6 mt-10"
+        ></div>
+      </div>
+    </section>
+
+    <!-- MUSIC -->
+
+    <section class="px-8 pb-20">
+      <div class="bg-gray-900 p-8 rounded-3xl max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-8">Study Music</h2>
+
+        <audio id="studyMusic" controls loop class="mx-auto">
+          <source src="music.mp3" type="audio/mpeg" />
+        </audio>
+      </div>
+    </section>
+
+    <!-- DASHBOARD -->
+
+    <section class="px-8 pb-20">
+      <div class="bg-gray-900 p-8 rounded-3xl max-w-5xl mx-auto">
+        <h2 class="text-4xl font-bold mb-8 text-center">Dashboard</h2>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-black p-6 rounded-2xl text-center">
+            <h3 class="text-2xl font-bold text-blue-500">Tasks</h3>
+
+            <p id="taskCount" class="text-5xl mt-4 font-bold">0</p>
+          </div>
+
+          <div class="bg-black p-6 rounded-2xl text-center">
+            <h3 class="text-2xl font-bold text-green-500">Progress</h3>
+
+            <p id="progressCount" class="text-5xl mt-4 font-bold">0%</p>
+          </div>
+
+          <div class="bg-black p-6 rounded-2xl text-center">
+            <h3 class="text-2xl font-bold text-orange-500">Streak</h3>
+
+            <p id="streakDashboard" class="text-5xl mt-4 font-bold">0</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JS -->
+
+    <script src="script.js"></script>
+  </body>
+</html>

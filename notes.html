@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Saved Notes | BrainBridge</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-black text-white min-h-screen">
+    <!-- Navbar -->
+
+    <nav class="border-b border-gray-800 p-6 flex justify-between items-center">
+      <h1 class="text-3xl font-bold text-blue-500">BrainBridge</h1>
+
+      <a
+        href="index.html"
+        class="bg-blue-500 hover:bg-blue-600 px-5 py-3 rounded-xl font-semibold"
+      >
+        Back Home
+      </a>
+    </nav>
+
+    <!-- Notes Display -->
+
+    <section class="p-8">
+      <div class="bg-gray-900 rounded-3xl p-8 max-w-5xl mx-auto">
+        <h2 class="text-5xl font-bold mb-8">Saved Notes</h2>
+
+        <div
+          id="savedNotes"
+          class="text-xl text-gray-300 whitespace-pre-wrap leading-relaxed"
+        ></div>
+
+        <button
+          id="clearNotesBtn"
+          class="mt-10 bg-red-500 hover:bg-red-600 px-6 py-3 rounded-xl font-semibold"
+        >
+          Clear Notes
+        </button>
+      </div>
+    </section>
+
+    <script>
+      const savedNotes = localStorage.getItem("notes");
+
+      const savedNotesDiv = document.getElementById("savedNotes");
+
+      if (savedNotes) {
+        savedNotesDiv.innerText = savedNotes;
+      } else {
+        savedNotesDiv.innerText = "No saved notes yet.";
+      }
+
+      // Clear Notes
+
+      const clearNotesBtn = document.getElementById("clearNotesBtn");
+
+      clearNotesBtn.addEventListener("click", () => {
+        localStorage.removeItem("notes");
+
+        savedNotesDiv.innerText = "No saved notes yet.";
+
+        alert("Notes Cleared!");
+      });
+    </script>
+  </body>
+</html>
