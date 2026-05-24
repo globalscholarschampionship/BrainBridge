@@ -1,21 +1,25 @@
 # BrainBridge
 
-BrainBridge is a smart student productivity platform designed to help students stay organized, focused, and motivated while studying.
+BrainBridge is a smart student productivity platform designed to help students stay organized, focused, and motivated while studying. The platform combines multiple productivity and learning tools into one modern dashboard for a better study experience.
+
+---
 
 ## Features
 
 - Task Planner
-- Notes System
 - Pomodoro Timer
+- Notes System
 - Progress Tracker
 - Study Streak Counter
 - Daily Goals
 - Flashcards
 - Motivational Quotes
 - Study Music Player
-- Dashboard Analytics
 - Dark/Light Theme Toggle
+- Responsive Modern UI
 - LocalStorage Data Saving
+
+---
 
 ## Technologies Used
 
@@ -23,13 +27,23 @@ BrainBridge is a smart student productivity platform designed to help students s
 - Tailwind CSS
 - JavaScript
 
+---
+
+## Screenshot
+
+![BrainBridge Screenshot](screenshot.png)
+
+---
+
 ## How to Run
 
-1. Download or clone the project
+1. Download or clone the repository
 2. Open the project folder
 3. Run `index.html` in your browser
 
-## File Structure
+---
+
+## Project Structure
 
 ```bash
 BrainBridge/
@@ -37,55 +51,36 @@ BrainBridge/
 ├── index.html
 ├── script.js
 ├── style.css
-├── auth.html
-├── notes.html
+├── README.md
+├── screenshot.png
 └── music.mp3
 ```
 
+---
+
 ## How It Works
 
-BrainBridge stores user data using browser localStorage. Tasks, notes, flashcards, progress, and streaks remain saved even after refreshing the page.
+BrainBridge stores user data using browser localStorage. Tasks, notes, flashcards, streaks, and progress remain saved even after refreshing the website.
 
-## Main Modules
-
-### Task Planner
-Users can create and delete study tasks.
-
-### Pomodoro Timer
-Helps students focus using timed study sessions.
-
-### Notes System
-Allows saving and clearing study notes.
-
-### Progress Tracker
-Tracks productivity progress visually.
-
-### Study Streak
-Encourages consistent studying habits.
-
-### Flashcards
-Interactive flashcards for active learning.
-
-### Daily Goals
-Users can manage daily study goals.
-
-### Music Player
-Provides relaxing study music with loop support.
+---
 
 ## Future Improvements
 
 - Firebase Integration
-- AI Study Assistant
 - User Authentication
-- Leaderboards
-- Cloud Data Storage
+- AI Study Assistant
+- Cloud Storage
 - Mobile App Version
+- Real-time Collaboration
+
+---
 
 ## Authors
 
 - Tafheem Farooq
-- Team BrainBridge
+
+---
 
 ## License
 
-This project is created for educational and hackathon purposes.
+This project was created for educational and hackathon purposes.
