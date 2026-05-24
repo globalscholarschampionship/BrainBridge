@@ -92,4 +92,4 @@ _AI has been used to make this website._
 ==============================================
 
 
-**Live Website Link** : https://globalscholarschampionship.github.io/BrainBridge/index.html
+**Live Website Link** : https://amazing-kringle-e552d1.netlify.app/
