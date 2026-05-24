@@ -86,5 +86,10 @@ BrainBridge stores user data using browser localStorage. Tasks, notes, flashcard
 This project was created for educational and hackathon purposes.
 -------------------------------------------------
 
+_AI has been used to make this website._
+
+
+==============================================
+
 
 **Live Website Link** : https://globalscholarschampionship.github.io/BrainBridge/index.html
